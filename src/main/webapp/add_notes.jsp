@@ -15,13 +15,13 @@
         <!-- this is add form -->
         <form action="SaveNoteServlet" method="post">
           <div class="mb-3">
-            <label for="title" class="form-label">Note Title</label>
-            <input required type="text" class="form-control" id="title" aria-describedby="emailHelp">
+            <label for="title"  class="form-label">Note Title</label>
+            <input required name="title" placeholder="Enter here" type="text" class="form-control" id="title" aria-describedby="emailHelp">
           </div>
 
           <div class="mb-3">
             <label for="content" class="form-label">Note Content</label>
-            <textarea required style="height:300px;"class="form-control"id="content" placeholder="Enter your content here"></textarea>
+            <textarea  name="content"required style="height:300px;"class="form-control"id="content" placeholder="Enter your content here"></textarea>
           </div>
 
           <div class="container text-center">
