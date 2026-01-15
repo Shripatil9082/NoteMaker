@@ -1,29 +1,38 @@
 package com.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
+import jakarta.persistence.*;
 import java.util.Date;
-import java.util.Random;
 
 @Entity
 @Table(name = "notes")
 public class Note {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String title;
-    private  String content;
+
+    @Column(length = 2000)
+    private String content;
+
+    @Temporal(TemporalType.TIMESTAMP)
     private Date addedDate;
 
-
-
-    public int getId() {
-        return id;
+    // Default constructor (required)
+    public Note() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    // Parameterized constructor
+    public Note(String title, String content, Date addedDate) {
+        this.title = title;
+        this.content = content;
+        this.addedDate = addedDate;
+    }
+
+    // Getters & setters
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -48,16 +57,5 @@ public class Note {
 
     public void setAddedDate(Date addedDate) {
         this.addedDate = addedDate;
-    }
-
-    public Note(String title, String content, Date addedDate) {
-        this.id = new Random().nextInt(100000);
-        this.title = title;
-        this.content = content;
-        this.addedDate = addedDate;
-    }
-
-    public Note(){
-
     }
 }
