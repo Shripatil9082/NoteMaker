@@ -1,3 +1,12 @@
 .purple{
     background:#29B6F6;
 }
+body {
+    background-color: #eef2ff;
+}
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
